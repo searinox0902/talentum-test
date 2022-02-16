@@ -47,6 +47,9 @@
         @apply mt-2 text-xs
     }
 
+    .stepper-step:first-child .stepper-number{
+        @apply  bg-custom-orange  text-white;
+     }
     .stepper-step.active .stepper-number{
        @apply  bg-custom-orange  text-white;
     }

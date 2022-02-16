@@ -1,65 +1,7 @@
 
 
 <template>
- <div class="px-8 mt-4 sm:container sm:w-3/4 sm:px-6 md:mx-auto">
-    <div class="grid grid-cols-1 mb-4">
-      <p class="text-right font-bold">
-        Already a Member?
-        <a href="#" class="text-orange">Sing in</a>
-      </p>
-    </div>
-
-    <div class="grid grid-cols-1 my-8">
-      <h1 class="font-bold text-xl text-center">Sing Up</h1>
-    </div>
-  
-    <Stepper></Stepper>
-
-    <FormSingIn></FormSingIn>
-    
-  </div>
-
-
-  <!-- <div class="px-8 mt-4 sm:container sm:w-3/4 sm:px-6 md:mx-auto">
-    <div class="grid grid-cols-1 mb-4">
-      <p class="text-right font-bold">
-        Already a Member?
-        <a href="#" class="text-orange">Sing in</a>
-      </p>
-    </div>
-
-    <div class="grid grid-cols-1 my-8">
-      <h1 class="font-bold text-xl text-center">Sing Up</h1>
-    </div>
-
-    <div class="grid grid-cols-1">
-      <div class="mx-auto w-full sm:w-2/3">
-        <ul class="stepper flex justify-between" data-mdb-stepper="stepper">
-          <li class="stepper-step active flex gap-2 items-center">
-            <div class="flex justify-center flex-col items-center">
-              <div class="stepper-number">1</div>
-              <div class="stepper-desc">Basic Details</div>
-            </div>
-          </li>
-          <li class="stepper-step flex items-center items-center active">
-            <div class="flex justify-center flex-col items-center">
-              <div class="stepper-number">2</div>
-              <div class="stepper-desc">Contact Details</div>
-            </div>
-          </li>
-          <li
-            class="stepper-step flex items-center stepper-active items-center"
-          >
-            <div class="flex justify-center flex-col items-center">
-              <div class="stepper-number">3</div>
-              <div class="stepper-desc">Verifications</div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="grid w-full mx-auto mt-8 mb-20">
+<div class="grid w-full mx-auto mt-8 mb-20">
       <form
         id="app"
         @submit="checkForm"
@@ -193,6 +135,8 @@
             />
           </label>
         </div>
+
+        <!-- ====== Education ===== !--->
 
         <div class="grid">
           <div>
@@ -339,15 +283,16 @@
         </div>
       </form>
     </div>
-  </div> -->
 </template>
 
-<script setup>
-  import Stepper from '@/components/Stepper.vue';
-  import FormSingIn from '@/components/FormSingIn.vue';
 
+
+<script>
+    export default {
+        data(){
+            return {
+                msj : ''
+            }
+        } 
+    }
 </script>
-
-<style>
-@import "./assets/base.css";
-</style>
