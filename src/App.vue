@@ -2,18 +2,18 @@
 </script>
 
 <template>
-  <div class="container mx-auto">
-    <div class="grid grid-cols-1">
+  <div class="px-8 mt-4  sm:container sm:w-3/4 sm:px-6 md:mx-auto">
+    <div class="grid grid-cols-1 mb-4">
       <p class="text-right font-bold">
         Already a Member?
-        <a href="#" class="font-bold text-do-custom-orange">Sing in</a>
+        <a href="#" class="text-orange">Sing in</a>
       </p>
     </div>
 
     <!-- ============ STEPPER ============ -->
 
     <div class="grid grid-cols-1">
-      <div class="mx-auto w-1/2">
+      <div class="mx-auto w-full">
         <ul class="stepper flex justify-between" data-mdb-stepper="stepper">
           <li class="stepper-step active flex gap-2 items-center">
             <div class="flex justify-center flex-col items-center">
@@ -41,16 +41,16 @@
 
     <!-- ============ STEPPER ============ -->
 
-    <div class="grid w-1/2 mx-auto mt-8 mb-20">
+    <div class="grid w-full mx-auto mt-8 mb-20">
       <form
         id="app"
         @submit="checkForm"
         action="https://vuejs.org/"
         method="post"
       >
-        <div class="grid grid-cols-2">
+        <div class="grid grid-cols-1 sm:grid-cols-2 ">
           <div>
-            <h2 class="font-bold text-lg my-3">Basic Details</h2>
+            <h2 class="title">Basic Details</h2>
 
             <label class="block">
               <p class="mb-2 mt-4">Full name</p>
@@ -71,7 +71,7 @@
             </label>
           </div>
 
-          <div class="flex justify-center items-center flex-col">
+          <div class="flex justify-center items-center flex-col my-6 sm:my-0">
             <button
               class="
                 w-20
@@ -97,7 +97,7 @@
               </svg>
             </button>
             <p class="font-bold mt-2">Add Photo</p>
-            <input class="" type="input" value="" />
+            <input class="hidden" type="file" value="" />
           </div>
         </div>
 
@@ -106,16 +106,7 @@
             <p class="mb-2 mt-4">Constituency</p>
             <input
               type="search"
-              class="
-                form-input
-                mt-1
-                block
-                w-full
-                rounded-full
-                backdrop-blur-sm
-                bg-custom-gray
-                border-0
-              "
+              class="input-gray"
               placeholder="Search Constituency"
             />
           </label>
@@ -127,14 +118,7 @@
             <select
               name="select"
               class="
-                form-input
-                mt-1
-                block
-                w-full
-                rounded-full
-                backdrop-blur-sm
-                bg-custom-gray
-                border-0
+               input-gray
               "
             >
               <option value="value1" selected>- Select you car -</option>
@@ -147,14 +131,7 @@
             <select
               name="select"
               class="
-                form-input
-                mt-1
-                block
-                w-full
-                rounded-full
-                backdrop-blur-sm
-                bg-custom-gray
-                border-0
+               input-gray
               "
             >
               <option value="value1" selected>- Select -</option>
@@ -170,38 +147,34 @@
             <input
               type="date"
               class="
-                form-input
-                mt-1
-                block
-                w-full
-                rounded-full
-                backdrop-blur-sm
-                bg-custom-gray
-                border-0
+               input-gray
               "
               placeholder="Enter Fullname"
             />
           </label>
           <div class="mt-2">
             <p class="mb-2 mt-4">Gender</p>
-            <label class="inline-flex items-center">
+            <div class="grid grid-cols-1 sm:grid-cols-2">
+              <label class="inline-flex items-center">
               <input
                 type="radio"
                 class="form-radio"
                 name="accountType"
                 value="personal"
               />
-              <span class="ml-2">Personal</span>
+              <span class="ml-2 text-custom-placeholder-gray">Personal</span>
             </label>
-            <label class="inline-flex items-center ml-6">
+            <label class="inline-flex items-center">
               <input
                 type="radio"
                 class="form-radio"
                 name="accountType"
                 value="busines"
               />
-              <span class="ml-2">Business</span>
+              <span class="ml-2 text-custom-placeholder-gray">Business</span>
             </label>
+            </div>
+            
           </div>
         </div>
 
@@ -211,17 +184,7 @@
             <input
               type="textarea"
               class="
-                form-input
-                mt-1
-                h-20
-                px-4
-                py-2
-                block
-                w-full
-                rounded-2xl
-                backdrop-blur-sm
-                bg-custom-gray
-                border-0
+               input-gray-textarea
               "
               placeholder="Type here..."
             />
@@ -233,27 +196,20 @@
         <div class="grid">
           <div>
             <div class="flex items-center justify-between my-2">
-              <h2 class="mb-2 mt-2 font-bold">Education</h2>
-              <button class="font-bold text-custom-orange">
+              <h2 class="title">Education</h2>
+              <button class="text-orange">
                 + Add Another Education
               </button>
             </div>
 
             <div
-              class="
-                grid grid-cols-3
-                gap-4
-                bg-custom-gray
-                rounded-2xl
-                p-4
-                border-gray
-                outline-g
-              "
+              class="panel-gray"
             >
-              <label class="block relative">
+              <label class="block relative w-full sm:w-auto " for="degree">
                 <p class="mb-2 mt-1">Degree</p>
                 <input
                   type="Text"
+                  if="degree"
                   class="
                     form-input
                     mt-1
@@ -268,7 +224,7 @@
                   placeholder="Enter Degree"
                 />
               </label>
-              <label class="block relative">
+              <label class="block relative w-full sm:w-auto ">
                 <p class="mb-2 mt-1">College/University</p>
                 <input
                   type="text"
@@ -286,7 +242,7 @@
                   placeholder="Enter College/University"
                 />
               </label>
-              <label class="block relative">
+              <label class="block relative w-full sm:w-auto ">
                 <p class="mb-2 mt-1">Graduation Year</p>
                 <input
                   type="date"
@@ -316,17 +272,13 @@
             </div>
           </div>
 
-          <div class="flex gap-4">
+          <div class="flex gap-4 flex-col sm:flex-row">
             <div
               class="
                 grow
-                grid grid-cols-3
+                grid grid-cols  sm:grid-cols-3
                 gap-4
-                bg-custom-gray
-                rounded-2xl
-                p-4
-                border-gray
-                outline-g
+                panel-gray
               "
             >
               <div>
@@ -349,15 +301,18 @@
               class="
                 bg-custom-gray
                 rounded-2xl
-                p-2
-                flex flex-col
+                px-4
+                py-2
+                sm:p-2
+
+                flex flex-row  sm:flex-col
                 justify-between
               "
             >
-              <button class="m-1">
+              <button class="m-1 w-10 sm:w-auto">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5"
+                  class="h-6 w-6"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
@@ -367,7 +322,7 @@
                 </svg>
               </button>
 
-              <button class="m-1">
+              <button class="m-1 w-10 sm:w-auto">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6"
