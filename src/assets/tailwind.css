@@ -3,3 +3,41 @@
 @tailwind components;
 
 @tailwind utilities;
+
+
+@layer components{
+
+    .stepper-step{
+        @apply mr-3 grow ;
+    }
+
+    .stepper-step:first-child{
+        @apply grow-0 ;
+    }
+
+    .stepper-step .stepper-number{
+        @apply  bg-custom-gray rounded-full w-7 h-7 flex items-center justify-center text-custom-dark-gray;
+    }
+
+    .stepper-step.active .stepper-number{
+       @apply  bg-custom-orange  text-white;
+    }
+}
+
+.stepper-step::before{
+    content: "";
+    flex: 1;
+    height: 1px;
+    width: 100%;
+    margin-right: 1.5rem;
+    margin-bottom: 1.5rem;
+    background-color: #b6b6b6;
+}
+
+.stepper-step.active::before{
+    background-color: #ff9000;
+}
+
+.stepper-step.active:first-child::before{
+   display: none;
+}
